@@ -30,8 +30,7 @@ interface Product {
 
 export default function ConfirmationPage() {
   const router = useRouter();
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
+  const [alamat, setAlamat] = useState('');
   const [name, setName] = useState('');
   const [cart, setCart] = useState<Record<string, number>>({});
   const [isLoaded, setIsLoaded] = useState(false);
@@ -117,7 +116,7 @@ export default function ConfirmationPage() {
   };
 
   const sendToWhatsApp = () => {
-    if (!name || !email || !phone) {
+    if (!name || !alamat ) {
       alert('Mohon lengkapi semua data yang diperlukan');
       return;
     }
@@ -140,8 +139,7 @@ export default function ConfirmationPage() {
       .replace('{orderDetails}', orderDetails)
       .replace('{total}', formatPrice(totalPrice))
       .replace('{name}', name)
-      .replace('{email}', email)
-      .replace('{phone}', phone);
+      .replace('{alamat}', alamat);
 
     const whatsappUrl = `https://wa.me/${
       storeInfo.whatsappNumber
@@ -338,31 +336,18 @@ export default function ConfirmationPage() {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                {formLabels.email}
+                {formLabels.alamat}
               </label>
-              <Input
-                type="email"
-                placeholder={formLabels.emailPlaceholder}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full"
+              <textarea
+                placeholder={formLabels.alamatPlaceholder}
+                value={alamat}
+                onChange={(e) => setAlamat(e.target.value)}
+                className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                rows={5}
                 required
               />
             </div>
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                {formLabels.phone}
-              </label>
-              <Input
-                type="tel"
-                placeholder={formLabels.phonePlaceholder}
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="w-full"
-                required
-              />
-            </div>
           </CardContent>
         </Card>
       </div>
@@ -392,14 +377,14 @@ export default function ConfirmationPage() {
 
           <Button
             onClick={sendToWhatsApp}
-            disabled={!name || !email || !phone || totalItems < minPurchase}
+            disabled={!name || !alamat  || totalItems < minPurchase}
             className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 text-lg font-medium rounded-lg disabled:bg-gray-400"
           >
             <MessageCircle className="w-5 h-5 mr-2" />
             {messages.checkoutButton}
           </Button>
 
-          {(!name || !email || !phone || totalItems < minPurchase) && (
+          {(!name || !alamat  || totalItems < minPurchase) && (
             <p className="text-xs text-gray-500 text-center mt-2">
               {totalItems < minPurchase
                 ? `Tambah ${minPurchase - totalItems} item lagi untuk checkout`

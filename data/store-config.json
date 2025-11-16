@@ -1,6 +1,6 @@
 {
   "storeInfo": {
-    "name": "ZAY COLLECTION",
+    "name": "ZAYAN COLLECTION",
     "tagline": "Murah & Nyaman!",
     "whatsappNumber": "6282313772913",
     "minPurchase": 1
@@ -21,7 +21,7 @@
       "price": 15000,
       "originalPrice": 20000,
       "image": "/kolor_pendek_sablon.jpeg?height=200&width=300",
-      "description": "Voucher game premium dengan bonus eksklusif"
+      "description": "Celana Kolor Pendek full sablon nyaman dan adem dipakai"
     },
     {
       "id": "2",
@@ -30,7 +30,7 @@
       "price": 25000,
       "originalPrice": 30000,
       "image": "/kolor_3_sablon.jpeg?height=200&width=300",
-      "description": "Paket makanan lengkap dengan minuman"
+      "description": "Celana Kolor 3/4 full sablon nyaman dan adem dipakai"
     },
     {
       "id": "3",
@@ -39,7 +39,7 @@
       "price": 15000,
       "originalPrice": 20000,
       "image": "/images_kolor.jpeg?height=200&width=300",
-      "description": "Paket makanan lengkap dengan minuman"
+      "description": "Celana Kolor Pendek polos nyaman dan adem dipakai"
     },
     {
       "id": "4",
@@ -48,20 +48,19 @@
       "price": 25000,
       "originalPrice": 30000,
       "image": "/image_kolor_3.jpeg?height=200&width=300",
-      "description": "Paket makanan lengkap dengan minuman"
+      "description": "Celana Kolor 3/4 polos nyaman dan adem dipakai"
     }
   ],
   "formLabels": {
     "name": "👤 Nama Pemesan:",
-    "email": "📧 Email:",
-    "phone": "📱 No. WhatsApp:",
+    "alamat": "📧 Alamat:",
     "namePlaceholder": "Masukkan nama lengkap",
-    "emailPlaceholder": "contoh@email.com",
+    "alamatPlaceholder": "Jalan Kayu Manis No 01, Perum Bahari...",
     "phonePlaceholder": "08123456789"
   },
   "messages": {
     "minPurchaseWarning": "⚠️ Minimal pembelian {min} item",
     "checkoutButton": "KIRIM PESANAN KE WHATSAPP",
-    "orderMessage": "*PESANAN BARU*\n\n{orderDetails}\n\n*Total: {total}*\n\nNama: {name}\nEmail: {email}\nNo. HP: {phone}\n\nTerima kasih!"
+    "orderMessage": "*PESANAN BARU*\n\n{orderDetails}\n\n*Total: {total}*\n\nNama: {name}\nAlamat: {alamat}\n\nTerima kasih!"
   }
 }
